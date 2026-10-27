@@ -15,8 +15,6 @@ import {
 } from './data/mockData';
 
 // Layout
-import { Sidebar } from './components/layout/Sidebar';
-import { MobileSidebar } from './components/layout/MobileSidebar';
 import { AppHeader } from './components/layout/AppHeader';
 
 // Auth
@@ -78,7 +76,6 @@ export const App = () => {
   // --- Navigation State ---
   const [currentScreen, setCurrentScreen] = useState('dashboard');
   const [currentId, setCurrentId] = useState<string | null>(null);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // --- Data State ---
   const [settings, setSettings] = useState<GlobalSettings>({
@@ -297,24 +294,13 @@ export const App = () => {
             />
         )}
 
-        <Sidebar 
-            currentScreen={currentScreen} 
-            onNavigate={(s) => navigate(s)} 
-            onLogout={() => setIsAuthenticated(false)}
-            onboardingProgress={Math.round((onboardingStep / 10) * 100)} 
-            onStartTour={() => { setOnboardingStep(0); setShowOnboarding(true); }}
-        />
-        
-        <MobileSidebar 
-            isOpen={isMobileMenuOpen} 
-            onClose={() => setIsMobileMenuOpen(false)} 
-            currentScreen={currentScreen} 
-            onNavigate={(s) => navigate(s)}
-        />
-
         <div className="flex-1 flex flex-col min-w-0 overflow-hidden relative">
-            <AppHeader 
-                onMenuClick={() => setIsMobileMenuOpen(true)} 
+            <AppHeader
+                currentScreen={currentScreen}
+                onNavigate={(s) => navigate(s)}
+                onLogout={() => setIsAuthenticated(false)}
+                onboardingProgress={Math.round((onboardingStep / 10) * 100)}
+                onStartTour={() => { setOnboardingStep(0); setShowOnboarding(true); }}
                 canGoBack={currentScreen.includes('_detail') || currentScreen === 'estimate' || currentScreen === 'template_edit' || currentScreen === 'presentation_editor'}
                 onBack={() => {
                     if(currentScreen === 'estimate') navigate('estimates');
