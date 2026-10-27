@@ -103,7 +103,7 @@ const WinRateGauge = ({ value }: { value: number }) => {
                 <circle 
                     cx="64" cy="64" r="54" 
                     fill="transparent" 
-                    stroke="var(--p-primary, #2563eb)" 
+                    stroke="var(--p-primary, #dc2626)" 
                     strokeWidth="12" 
                     strokeDasharray={`${fillLength} ${circumference}`}
                     strokeDashoffset="0" 
@@ -848,7 +848,7 @@ export const DashboardHomeView = ({
                 <div className="relative w-32 h-32 flex items-center justify-center mb-6 mt-2">
                     <svg className="w-full h-full -rotate-90 drop-shadow-sm" viewBox="0 0 128 128">
                         <circle cx="64" cy="64" r="54" fill="transparent" stroke="currentColor" strokeWidth="12" className="text-gray-100 dark:text-gray-700" />
-                        <circle cx="64" cy="64" r="54" fill="transparent" stroke="var(--p-primary, #2563eb)" strokeWidth="12" strokeDasharray="339.29" strokeDashoffset={339.29 * (1 - 0.37)} strokeLinecap="round" />
+                        <circle cx="64" cy="64" r="54" fill="transparent" stroke="var(--p-primary, #dc2626)" strokeWidth="12" strokeDasharray="339.29" strokeDashoffset={339.29 * (1 - 0.37)} strokeLinecap="round" />
                     </svg>
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                         <span className="text-3xl font-black text-gray-900 dark:text-white leading-none">{filteredEstimates.length}</span>

@@ -54,7 +54,7 @@ export const PresentationBuilderView = ({
 
   // --- BRANDING STATE ---
   const [branding, setBranding] = useState<BrandingConfig>({
-      primaryColor: '#2563eb',
+      primaryColor: '#dc2626',
       headingFont: "'Manrope', sans-serif",
       bodyFont: "'Roboto', sans-serif"
   });

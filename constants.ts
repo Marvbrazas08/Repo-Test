@@ -168,7 +168,7 @@ export const DEFAULT_SETTINGS: GlobalSettings = {
     email: 'hello@precisionpaint.com',
     website: 'www.precisionpaint.com',
     licenseNumber: 'LC-12345678',
-    primaryColor: '#2563eb'
+    primaryColor: '#dc2626'
   },
   userProfile: {
     firstName: 'Tim',
